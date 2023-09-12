@@ -1,5 +1,5 @@
 <template>
-  <a-form class="form">
+  <a-form class="form" @submit="handleSubmit">
     <a-form-item label="DAY" :colon="false" class="form__item">
       <a-input
         placeholder="DD"
@@ -79,11 +79,59 @@ import { defineComponent, ref } from "vue";
 export default defineComponent({
   name: "Form",
   setup() {
-    const day = ref(null);
-    const month = ref(null);
-    const year = ref(null);
+    // const form = ref(null);
+    const day = ref<string | null>(null);
+    const month = ref<string | null>(null);
+    const year = ref<string | null>(null);
 
-    return { day, month, year };
+    const calculateDays = ref<number | null>(null);
+    const calculateMonths = ref<number | null>(null);
+    const calculateYears = ref<number | null>(null);
+
+    const clearInput = () => {
+      day.value = null;
+      month.value = null;
+      year.value = null;
+    };
+
+    const handleSubmit = (e: SubmitEvent) => {
+      e.preventDefault();
+
+      //   this.form.validateFields((err) => {
+      //     if (!err) {
+      const birthDate = new Date(
+        year.value + "-" + month.value + "-" + day.value
+      );
+
+      const now = new Date();
+      //   if (now < birthDate) {
+      //     this.$notify(
+      //       {
+      //         group: "error",
+      //         title: "Error",
+      //         text: "Can't be bigger than the current year!",
+      //       },
+      //       2000
+      //     );
+      //     // this.clearInput()
+
+      //     return;
+      //   }
+      const diffDate = new Date(now - birthDate);
+
+      calculateDays.value = diffDate.getDate();
+      calculateMonths.value = diffDate.getMonth() + 1;
+      calculateYears.value = diffDate.getFullYear() - 1970;
+
+      clearInput();
+      // } else {
+      calculateDays.value = null;
+      calculateMonths.value = null;
+      calculateYears.value = null;
+      // }
+    };
+
+    return { day, month, year, handleSubmit };
   },
 });
 </script>
