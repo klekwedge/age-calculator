@@ -2,6 +2,7 @@
   <a-form class="form">
     <a-form-item label="DAY" :colon="false" class="form__item">
       <a-input
+        v-model="day"
         placeholder="DD"
         v-decorator="[
           'day',
@@ -24,6 +25,7 @@
     </a-form-item>
     <a-form-item label="MONTH" :colon="false" class="form__item">
       <a-input
+        v-model="month"
         placeholder="MM"
         v-decorator="[
           'month',
@@ -43,6 +45,7 @@
     </a-form-item>
     <a-form-item label="YEAR" :colon="false" class="form__item">
       <a-input
+        v-model="year"
         placeholder="YYYY"
         v-decorator="[
           'year',
@@ -69,16 +72,22 @@
     </a-form-item>
   </a-form>
 </template>
-  
+
 <script lang="ts">
-export default {
+import { defineComponent, ref } from "vue";
+
+export default defineComponent({
   name: "Form",
   setup() {
-    return {};
+    const day = ref(null);
+    const month = ref(null);
+    const year = ref(null);
+
+    return { day, month, year };
   },
-};
+});
 </script>
-  
+
 <style lang="scss" scoped>
 .form {
   margin-bottom: 1rem;
@@ -92,7 +101,8 @@ export default {
 }
 
 .form__item {
-  display: block;
+  display: flex;
+  flex-direction: column;
   font-size: 10px;
   letter-spacing: 0.05em;
   font-weight: bold;

@@ -1,16 +1,15 @@
 <template>
-     <div>
-        <ul class="result__list">
-          <li class="result__item">
-            <!-- <span :class="calculate[item] ? '' : 'tracking-[15px]'">{{ calculate[item] ?? '--'}}</span> -->
-            <!-- <span class="result__text">{{item}}</span> -->
-          </li>
-        </ul>
-      </div>
-    </div>
-  </template>
+  <div>
+    <ul class="result__list">
+      <li class="result__item">
+        <!-- <span :class="calculate[item] ? '' : 'tracking-[15px]'">{{ calculate[item] ?? '--'}}</span> -->
+        <!-- <span class="result__text">{{item}}</span> -->
+      </li>
+    </ul>
+  </div>
+</template>
     
-  <script lang="ts">
+<script lang="ts">
 export default {
   name: "Result",
   setup() {
