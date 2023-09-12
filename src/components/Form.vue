@@ -1,12 +1,6 @@
 <template>
-  <a-form
-    class="mb-4 pb-5 flex flex-col md:flex-row justify-start gap-8 border-b-2 border-light-gray"
-  >
-    <a-form-item
-      label="DAY"
-      :colon="false"
-      class="block text-smokey-grey text-[10px] tracking-widest font-bold mb-2 text-start"
-    >
+  <a-form class="form">
+    <a-form-item label="DAY" :colon="false" class="form__item">
       <a-input
         placeholder="DD"
         v-decorator="[
@@ -24,15 +18,11 @@
             ],
           },
         ]"
-        class="bg-transparent text-off-black font-bold text-lg border border-light-gray rounded md:w-28 w-full py-2 px-3 focus:outline-none placeholder:text-smokey-grey placeholder:font-extrabold uppercase focus:border-off-purple"
+        class="form__input"
       >
       </a-input>
     </a-form-item>
-    <a-form-item
-      label="MONTH"
-      :colon="false"
-      class="block text-smokey-grey text-[10px] tracking-widest font-bold mb-2 text-start"
-    >
+    <a-form-item label="MONTH" :colon="false" class="form__item">
       <a-input
         placeholder="MM"
         v-decorator="[
@@ -47,15 +37,11 @@
             ],
           },
         ]"
-        class="bg-transparent text-off-black font-bold text-lg border border-light-gray rounded md:w-28 w-full py-2 px-3 focus:outline-none placeholder:text-smokey-grey placeholder:font-extrabold uppercase focus:border-off-purple"
+        class="form__input"
       >
       </a-input>
     </a-form-item>
-    <a-form-item
-      label="YEAR"
-      :colon="false"
-      class="block text-smokey-grey text-[10px] tracking-widest font-bold mb-2 text-start"
-    >
+    <a-form-item label="YEAR" :colon="false" class="form__item">
       <a-input
         placeholder="YYYY"
         v-decorator="[
@@ -68,18 +54,15 @@
             ],
           },
         ]"
-        class="bg-transparent text-off-black font-bold text-lg border border-light-gray rounded md:w-28 w-full py-2 px-3 focus:outline-none placeholder:text-smokey-grey placeholder:font-extrabold uppercase focus:border-off-purple"
+        class="form__input"
       >
       </a-input>
     </a-form-item>
-    <a-form-item class="inline-flex items-center justify-end w-full">
-      <a-button
-        html-type="submit"
-        class="absolute p-4 md:mt-6 -mt-2 -ml-14 rounded-full font-medium text-gray-900 bg-off-purple hover:bg-off-black hover:cursor-pointer"
-      >
+    <a-form-item class="form__arrow">
+      <a-button html-type="submit" class="form__button">
         <img
-          src="./assets/images/icon-arrow.svg"
-          class="w-7 h-7"
+          src="./../assets/icon-arrow.svg"
+          class="form__image w-7 h-7"
           alt="arrow-icon"
         />
       </a-button>
@@ -96,6 +79,78 @@ export default {
 };
 </script>
   
-  <style scoped>
+<style lang="scss" scoped>
+.form {
+  margin-bottom: 1rem;
+  padding-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2rem;
+  border-bottom-width: 2px;
+  border-bottom-color: #d3d3d3;
+}
+
+.form__item {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: start;
+  color: #656565;
+}
+
+.form__input {
+  background-color: transparent;
+  color: #333333;
+  font-weight: bold;
+  font-size: 1.125rem;
+  border: 1px solid #d3d3d3;
+  border-radius: 0.25rem;
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  outline: none;
+  &::placeholder {
+    color: #656565;
+    font-weight: bold;
+  }
+
+  &:focus {
+    border-color: #6b46c1;
+  }
+}
+
+.form__arrow {
+  /* display: inline-flex;
+  align-items: center;
+  justify-content: flex-end; */
+  /* width: 100%; */
+}
+
+.form__button {
+  position: absolute;
+  left: 100px;
+  padding: 1rem;
+  margin-top: -0.5rem;
+  margin-left: -3.5rem;
+  border-radius: 50%;
+  font-weight: 500;
+  color: #333333;
+  background-color: #6b46c1;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #333333;
+  }
+}
+
+.form__image {
+  width: 1.75rem;
+  height: 1.75rem;
+}
 </style>
   
