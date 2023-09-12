@@ -2,8 +2,8 @@
   <a-form class="form">
     <a-form-item label="DAY" :colon="false" class="form__item">
       <a-input
-        v-model="day"
         placeholder="DD"
+        v-model:value="day"
         v-decorator="[
           'day',
           {
@@ -25,7 +25,7 @@
     </a-form-item>
     <a-form-item label="MONTH" :colon="false" class="form__item">
       <a-input
-        v-model="month"
+        v-model:value="month"
         placeholder="MM"
         v-decorator="[
           'month',
@@ -45,7 +45,7 @@
     </a-form-item>
     <a-form-item label="YEAR" :colon="false" class="form__item">
       <a-input
-        v-model="year"
+        v-model:value="year"
         placeholder="YYYY"
         v-decorator="[
           'year',

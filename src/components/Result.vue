@@ -10,12 +10,12 @@
 </template>
     
 <script lang="ts">
-export default {
+import { defineComponent } from "vue";
+
+export default defineComponent({
   name: "Result",
-  setup() {
-    return {};
-  },
-};
+  setup() {},
+});
 </script>
     
 <style lang="scss" scoped>
