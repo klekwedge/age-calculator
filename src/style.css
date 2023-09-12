@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #dbdbdb;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ant-form-item-with-help {
+  .ant-form-item-label .ant-form-item-required {
+    color: #ff5757 !important;
+  }
+
+  .ant-form-item-control-wrapper .has-error,
+  .has-success {
+    .ant-form-item-children input {
+      border: 1px solid #ff5757 !important;
+    }
+
+    .ant-form-explain {
+      color: #ff5757 !important;
+      font-size: 10px !important;
+      font-family: sans-serif;
+      font-weight: 500 !important;
+      letter-spacing: 0 !important;
+      font-style: italic !important;
+    }
+  }
+}
