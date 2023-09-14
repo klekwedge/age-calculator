@@ -1,12 +1,13 @@
 
 <template>
-  <main class="wrapper"><Input /></main>
+  <main class="wrapper"><Input /> <Button /></main>
 </template>
 
 
 <script setup>
 import { ref } from "vue";
 import Input from "./components/Input.vue";
+import Button from "./components/Button.vue";
 
 const validDate = ref(null);
 </script>
