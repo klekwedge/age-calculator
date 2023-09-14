@@ -1,13 +1,12 @@
 
 <template>
-  <main class="wrapper"><Input /> <Button /><Result/></main>
+  <main class="wrapper"><Form /><Result/></main>
 </template>
 
 
 <script setup>
 import { ref } from "vue";
-import Input from "./components/Input.vue";
-import Button from "./components/Button.vue";
+import Form from "./components/Form.vue";
 import Result from "./components/Result.vue";
 
 const validDate = ref(null);
