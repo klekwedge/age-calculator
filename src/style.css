@@ -1,38 +1,24 @@
-* {
-  margin: 0;
-  padding: 0;
+:root {
+  /* primary colors */
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+  /* neutral colors */
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+
+  /* font (400i - 700 - 800i)*/
+  --main-font: "Poppins", sans-serif;
 }
 
-#app {
-  font-family: "Poppins", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #dbdbdb;
+body {
+  background-color: var(--off-white);
+  font-family: var(--main-font);
+  font-size: 16px;
   height: 100vh;
-  text-align: center;
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-.ant-form-item-with-help {
-  .ant-form-item-label .ant-form-item-required {
-    color: #ff5757 !important;
-  }
-
-  .ant-form-item-control-wrapper .has-error,
-  .has-success {
-    .ant-form-item-children input {
-      border: 1px solid #ff5757 !important;
-    }
-
-    .ant-form-explain {
-      color: #ff5757 !important;
-      font-size: 10px !important;
-      font-family: sans-serif;
-      font-weight: 500 !important;
-      letter-spacing: 0 !important;
-      font-style: italic !important;
-    }
-  }
+  align-items: center;
 }

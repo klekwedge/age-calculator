@@ -1,30 +1,31 @@
+
 <template>
-  <div class="container">
-    <Form />
-  </div>
+  <main class="wrapper"></main>
 </template>
 
-<script lang="ts">
-import Form from "./components/Form.vue";
 
-export default {
-  components: { Form },
-  setup() {
-    return {};
-  },
-};
+<script setup>
+import { ref } from "vue";
+
+const validDate = ref(null);
 </script>
 
-<style lang="scss" sroped>
-.container {
-  background-color: #fdfdfd;
-  display: flex;
-  flex-direction: column;
-  width: 600px;
-  margin: 1.25rem;
-  height: auto;
-  padding: 2.5rem;
-  border-radius: 1.875rem;
-  border-bottom-right-radius: 8.125rem;
+<style>
+.wrapper {
+  width: 40rem;
+  height: 30rem;
+  background-color: var(--white);
+  margin: 0 auto;
+  padding: 50px;
+
+  border-radius: 20px 20px 30% 20px;
+
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+}
+@media (max-width: 768px) {
+  .wrapper {
+    width: 70%;
+  }
 }
 </style>
