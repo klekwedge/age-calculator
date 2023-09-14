@@ -1,8 +1,7 @@
-
 <template>
   <main class="wrapper">
-    <Form />
-    <Result />
+    <Form @get-valid-date="(dateResult) => {validDate = dateResult;}"/>
+    <Result :result="validDate"/>
   </main>
 </template>
 

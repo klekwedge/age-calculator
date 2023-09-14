@@ -23,7 +23,7 @@
       place-h="YYYY"
       :error="errorYear"
       error-message="Must be a in the past"
-      element-title="value between 1600 - this year"
+      element-title="value between 1900 - this year"
     />
     <Button @create-output="calculateAge(birth)" />
   </form>
@@ -61,6 +61,7 @@ const errorDay = computed(() => {
     return false;
   }
 });
+
 const errorMonth = computed(() => {
   if (birth.value.month < 1 || birth.value.month > 12) {
     return true;
@@ -68,18 +69,19 @@ const errorMonth = computed(() => {
     return false;
   }
 });
+
 const errorYear = computed(() => {
   const today = new Date();
   const thisYear = today.getFullYear();
 
-  if (birth.value.year > thisYear || birth.value.year < 1600) {
+  if (birth.value.year > thisYear || birth.value.year < 1900) {
     return true;
   } else {
     return false;
   }
 });
 
-// check form validity
+
 const isValid = (obj) => {
   const lastday = getLastDay(obj.month, obj.year);
   const today = new Date();
@@ -93,7 +95,6 @@ const isValid = (obj) => {
     obj.year === "" ||
     obj.year === null
   ) {
-    console.log("blankkkk");
     valid.value = false;
     return false;
   } else if (obj.day < 1 || obj.month < 1 || obj.year < 1) {
@@ -104,7 +105,7 @@ const isValid = (obj) => {
     console.log("select a valid day");
     valid.value = false;
     return false;
-  } else if (obj.year > thisYear || obj.year < 1600) {
+  } else if (obj.year > thisYear || obj.year < 1900) {
     console.log("select a valid year");
     valid.value = false;
     return false;
