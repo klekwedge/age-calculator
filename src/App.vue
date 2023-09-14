@@ -1,6 +1,6 @@
 
 <template>
-  <main class="wrapper"><Input /> <Button /></main>
+  <main class="wrapper"><Input /> <Button /><Result/></main>
 </template>
 
 
@@ -8,6 +8,7 @@
 import { ref } from "vue";
 import Input from "./components/Input.vue";
 import Button from "./components/Button.vue";
+import Result from "./components/Result.vue";
 
 const validDate = ref(null);
 </script>
