@@ -1,5 +1,5 @@
 <template>
-  <div class="input-v">
+  <div class="input__container">
     <label :class="classes" for="date">{{ title }}</label>
     <input
       ref="input"
@@ -9,7 +9,6 @@
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
       :placeholder="placeH"
-      required
     />
     <span :title="elementTitle" v-if="input" :class="classes">{{
       !error ? "" : input.value ? errorMessage : "This field is required"
@@ -50,8 +49,11 @@ input[type="number"] {
 .date {
   letter-spacing: 1.2;
 }
+
 span {
   display: none;
+  margin-top: 10px;
+  font-size: 14px;
 }
 
 label {
@@ -61,7 +63,7 @@ label {
   font-weight: 700;
 }
 
-.input-v {
+.input__container {
   display: flex;
   flex-direction: column;
 }
